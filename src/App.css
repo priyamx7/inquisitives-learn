@@ -58,6 +58,30 @@ body {
   width: 13rem;
 }
 
+.categoryButtons {
+  margin: 1.5rem 0 1.5rem 7rem;
+}
+
+.categoryBtn {
+  border: 2px solid;
+  border-color: var(--primary-color);
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0 0 1rem;
+  background-color: var(--primary-white);
+  cursor: pointer;
+}
+
+.categoryBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-white);
+}
+
+.categoryBtn:active {
+  background-color: var(--primary-color);
+  color: var(--primary-white);
+}
+
 .videosContainer {
   display: flex;
   flex-wrap: wrap;
@@ -174,15 +198,43 @@ body {
   margin: 1rem 0 0 0;
 }
 
+.likeImg {
+  width: auto;
+  margin: 1rem 0 0 0;
+}
+
+.likedVideoCard {
+  padding: 0.5rem;
+  display: flex;
+  box-shadow: var(--primary-boxshadow);
+  border-radius: 1rem;
+  width: 35rem;
+  margin: 1rem;
+}
+
 .likedVideosDescription {
   margin: 0 0 0 1rem;
+}
+
+.likedVideoThumbnail {
+  width: 9rem;
+  margin: 0 2rem 0 0;
+}
+
+.likedVideoTitle {
+  font-weight: bold;
+}
+
+.likedVideoChannelName {
+  color: var(--primary-ligthgrey);
+  margin: 0 0 1rem 0;
 }
 
 .uniqueVideoContainer {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  justify-content: start;
+  align-items: center;
+  /* justify-content: start; */
   margin: 0 0 0 1rem;
 }
 

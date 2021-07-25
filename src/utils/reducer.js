@@ -1,6 +1,7 @@
 export const initialState = {
     watchLater: [],
-    likes: []
+    likes: [],
+    category: null
 }
 
 export const reducer = (state, action) => {
@@ -12,10 +13,13 @@ export const reducer = (state, action) => {
             return { ...state, likes: [...state.likes, action.payload] }
         
         case "REMOVE_FROM_WATCH_LATER":
-            return { state, watchLater: state.watchLater.filter(item => item._id !== action.payload._id) }
+            return { ...state, watchLater: state.watchLater.filter(item => item._id !== action.payload._id) }
         
         case "REMOVE_FROM_LIKES":
-            return { state, likes: state.likes.filter(item => item._id !== action.payload._id) }
+            return { ...state, likes: state.likes.filter(item => item._id !== action.payload._id) }
+        
+        case "SET_FILTER":
+            return { ...state, category: action.payload }
     
         default:
             return { state };

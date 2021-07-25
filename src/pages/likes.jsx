@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../contexts/AppContext'
-import likeImg from '../images/likeImg.jpg'
+import likeImg from '../images/likeImg.png'
 import { ImBin } from 'react-icons/im'
 
 const Likes = () => {
@@ -21,7 +21,7 @@ const Likes = () => {
                             <div>
                                 <p className="likedVideoTitle">{likedVideo.title}</p>
                                 <p className="likedVideoChannelName">{likedVideo.channelName}</p>
-                                <button className="btn deleteBtn" onClick={() => dispatch({ type: "REMOVE_FROM_LIKES" })}><ImBin /></button>
+                                <button className="btn deleteBtn" onClick={() => dispatch({ type: "REMOVE_FROM_LIKES", payload: likedVideo })}><ImBin /></button>
                             </div>
                         </div>
                     )
