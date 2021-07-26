@@ -11,7 +11,7 @@ import Likes from './pages/likes'
 import Playlists from './pages/playlists'
 import WatchLater from './pages/watchlater'
 import Video from './pages/video'
-
+import PlaylistVideos from './pages/playlistvideos'
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
         <Route path="playlists" element={<Playlists />} />
         <Route path="watchLater" element={<WatchLater />} />
         <Route path="/video/:videoId" element={<Video />} />
+        <Route path="/playlists/:playlistId" element={<PlaylistVideos />} />
       </Routes>
     </div>
   );
