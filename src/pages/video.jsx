@@ -17,8 +17,6 @@ const Video = () => {
   const videoToShow = videos.find((video) => video._id === videoId);
   const [inputDisplay, setInputDisplay] = useState(false);
   const [newPlaylist, setNewPlaylist] = useState("");
-  // const [ isChecked, setIsChecked ] = useState(false);
-  // console.log(state.playlists, "Playlists");
   
   return (
     <div className="uniqueVideoContainer">
@@ -79,9 +77,8 @@ const Video = () => {
             type="text"
             placeholder="Enter Playlist Name"
           />
-          <span>
             <button
-              className="btn addPlayListBtn"
+              className="addPlayListBtn"
               onClick={() => {
                 dispatch({ type: "CREATE_PLAYLIST", payload: newPlaylist });
                 setNewPlaylist("");
@@ -89,16 +86,16 @@ const Video = () => {
             >
               +
             </button>
-          </span>
-          {state.playlists.map((playlist) => {
+          {state.playlists?.map((playlist) => {
+            console.log(playlist.videos.includes(videoToShow))
             return (
               <div>
                 <input
                   type="checkbox"
-                  checked={playlist?.videos?.includes(videoToShow)}
+                  checked={playlist.videos.includes(videoToShow) ? true : false}
                   onClick={() =>
-                    playlist?.video?.includes(videoToShow) ? 
-                    dispatch({ type: "REMOVE_VIDEO_FROM_PLAYLIST", payload: videoToShow }) :
+                    playlist.videos.includes(videoToShow) ? 
+                    dispatch({ type: "REMOVE_VIDEO_FROM_PLAYLIST", payload: {playlistId: playlist._id, video: videoToShow} }) :
                     dispatch({
                       type: "ADD_VIDEO_IN_PLAYLIST",
                       payload: { playlistId: playlist._id, video: videoToShow },

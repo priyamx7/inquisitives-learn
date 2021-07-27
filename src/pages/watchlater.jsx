@@ -12,7 +12,8 @@ const WatchLater = () => {
                 <img className="watchLaterImg" src={watchlater} alt="watch later thumbnail"/>
             </div>
             <div className="watchLaterVideosContainer">
-            {state.watchLater.map(watchLaterVideo => {
+            {state.watchLater.length < 1 ? <h2>No videos in watch later playlist</h2> : 
+            state.watchLater.map(watchLaterVideo => {
                 return (
                     <div className="watchLaterVideoCard">
                         <div>
@@ -25,7 +26,8 @@ const WatchLater = () => {
                         </div>
                     </div>
                 )
-            })}
+            })
+            }
         </div>
         </div>
     )

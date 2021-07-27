@@ -12,7 +12,6 @@ export const PlaylistVideos = () => {
     <div className="videosContainer">
       {state.playlists.map((playlist) => {
         if (playlist._id == playlistId) {
-          console.log(playlist);
           return playlist.videos.map((video) => {
             return (
               <div className="videoCard">
